@@ -1,0 +1,54 @@
+{
+	"redirects": [
+		{ "source": "/resume", "destination": "https://arhn.us/resume" },
+		{
+			"source": "/spotify",
+			"destination": "https://open.spotify.com/user/arhaanb"
+		},
+		{
+			"source": "/twitter",
+			"destination": "https://twitter.com/arhaanbahadur"
+		},
+		{ "source": "/twt", "destination": "https://twitter.com/arhaanbahadur" },
+		{ "source": "/ig", "destination": "https://instagram.com/arhaan_bahadur" },
+		{
+			"source": "/instagram",
+			"destination": "https://instagram.com/arhaan_bahadur"
+		}
+	],
+	"rewrites": [
+		{
+			"source": "/ponder/:match*",
+			"destination": "https://ponder.vercel.app/:match*"
+		},
+		{
+			"source": "/spotifyactivity/:match*",
+			"destination": "https://spotact-website.vercel.app/:match*"
+		},
+		{ "source": "/:pathinfo*", "destination": "index.html" }
+	],
+	"github": {
+		"autoAlias": true,
+		"enabled": true,
+		"silent": true
+	},
+	"trailingSlash": false,
+	"public": false,
+	"headers": [
+		{
+			"source": "/api/(.*)",
+			"headers": [
+				{ "key": "Access-Control-Allow-Credentials", "value": "true" },
+				{ "key": "Access-Control-Allow-Origin", "value": "*" },
+				{
+					"key": "Access-Control-Allow-Methods",
+					"value": "GET,OPTIONS,PATCH,DELETE,POST,PUT"
+				},
+				{
+					"key": "Access-Control-Allow-Headers",
+					"value": "X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version"
+				}
+			]
+		}
+	]
+}
